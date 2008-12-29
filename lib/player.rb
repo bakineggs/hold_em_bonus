@@ -28,6 +28,10 @@ class Player
     pay 0
   end
 
+  def push
+    pay bet
+  end
+
   def bet_turn?(hole_cards, board_cards)
     raise NotImplementedError
   end

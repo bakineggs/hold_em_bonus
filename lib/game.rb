@@ -57,9 +57,13 @@ class Game
         players.each do |player|
           player.pay player.bet * 2 + payout_offset
         end
-      else
+      elsif player_hand < dealer_hand
         players.each do |player|
           player.lose_bet
+        end
+      else
+        players.each do |player|
+          player.push
         end
       end
     end
