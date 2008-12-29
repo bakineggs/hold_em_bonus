@@ -4,7 +4,8 @@ class Player
   def self.TYPES
     [
       Player1,
-      Player2
+      Player2,
+      Player3
     ]
   end
 
