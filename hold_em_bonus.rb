@@ -9,27 +9,21 @@ end
 players = Player.TYPES.map{|type| type.new}
 game = Game.new(players)
 
-highest = {}
-lowest = {}
+balances = {}
 players.each do |player|
-  highest[player] = 0
-  lowest[player] = 0
+  balances[player] = []
 end
 
 1000.times do
   game.play_hand
   players.each do |player|
-    if player.balance > highest[player]
-      highest[player] = player.balance
-    elsif player.balance < lowest[player]
-      lowest[player] = player.balance
-    end
+    balances[player].push player.balance
   end
 end
 
 players.each do |player|
   puts "#{player.class}:"
   puts "  Balance: #{player.balance}"
-  puts "  Highest: #{highest[player]}"
-  puts "  Lowest: #{lowest[player]}"
+  puts "  Highest: #{balances[player].max}"
+  puts "  Lowest: #{balances[player].min}"
 end
