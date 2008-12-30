@@ -6,21 +6,19 @@ require 'lib/player'
   require "lib/players/#{player}"
 end
 
-players = Hash[*Player.TYPES.map do |type|
-  [type, type.new]
-end.flatten]
-game = Game.new(players.values)
+players = Player.TYPES.map{|type| type.new}
+game = Game.new(players)
 
 highest = {}
 lowest = {}
-players.each do |type, player|
+players.each do |player|
   highest[player] = 0
   lowest[player] = 0
 end
 
 1000.times do
   game.play_hand
-  players.each do |type, player|
+  players.each do |player|
     if player.balance > highest[player]
       highest[player] = player.balance
     elsif player.balance < lowest[player]
@@ -29,8 +27,8 @@ end
   end
 end
 
-players.each do |type, player|
-  puts "#{type}:"
+players.each do |player|
+  puts "#{player.class}:"
   puts "  Balance: #{player.balance}"
   puts "  Highest: #{highest[player]}"
   puts "  Lowest: #{lowest[player]}"
