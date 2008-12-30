@@ -5,7 +5,8 @@ class Player
     [
       Player1,
       Player2,
-      Player3
+      Player3,
+      Player4
     ]
   end
 
