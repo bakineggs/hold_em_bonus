@@ -5,7 +5,7 @@ class PairsWithBoardDrawLogic < Player
     [
       highest_card?,
       pair?,
-      draws?(hand)
+      strong_draws?(hand)
     ].any?
   end
 
