@@ -1,4 +1,4 @@
-class Player4 < Player
+class PairsAndHighestCard < Player
   def bet_turn?(hole_cards, board_cards)
     hand = Poker::Hand.new *(hole_cards + board_cards)
     [
@@ -12,7 +12,7 @@ class Player4 < Player
   def bet_river?(hole_cards, board_cards)
     hand = Poker::Hand.new *(hole_cards + board_cards)
     [
-      Poker::Hand.new(*board_cards).pair? && highest_card?(hole_cards, board_cards),
+      highest_card?(hole_cards, board_cards),
       pair?(hole_cards, board_cards),
       hand.straight?,
       hand.flush?

@@ -1,4 +1,4 @@
-class Player3 < Player
+class PairsWithBoardDrawLogic < Player
   def bet_turn?(hole_cards, board_cards)
     [
       highest_card?(hole_cards, board_cards),

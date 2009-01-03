@@ -3,10 +3,11 @@ class Player
 
   def self.TYPES
     [
-      Player1,
-      Player2,
-      Player3,
-      Player4
+      Pairs,
+      PairsAndAceHigh,
+      PairsAndHighestCard,
+      PairsAndHighestCardWhenBoardPaired,
+      PairsWithBoardDrawLogic
     ]
   end
 
