@@ -3,6 +3,7 @@ class Player
 
   def self.TYPES
     [
+      #BruteForce,
       Pairs,
       PairsAndAceHigh,
       PairsAndHighestCard,
